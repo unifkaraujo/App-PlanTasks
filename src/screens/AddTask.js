@@ -69,10 +69,11 @@ export default class AddTask extends Component {
 
                 <View style={styles.container}> 
                     <Text style={[styles.header, {backgroundColor: this.props.color}]}> Nova Tarefa </Text>
-                    <TextInput style={styles.input} 
-                    placeholder='Informe a Descrição...'
-                    onChangeText={desc => this.setState( { desc: desc } )}
-                    value={this.state.desc}
+                    <TextInput style={[styles.input, { color: '#000' }]}
+                        placeholder='Informe a Descrição...'
+                        placeholderTextColor="#888888"
+                        onChangeText={desc => this.setState( { desc: desc } )}
+                        value={this.state.desc}
                     />
 
                     {this.getDatePiker()}
@@ -139,6 +140,7 @@ const styles = StyleSheet.create({
         color: commonStyles.colors.today
     },
     date: {
+        color: '#888888',
         fontFamily: commonStyles.fontFamily,
         fontSize: 20,
         marginLeft: 15

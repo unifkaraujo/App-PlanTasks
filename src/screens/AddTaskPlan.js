@@ -43,15 +43,16 @@ export default class AddTaskPlan extends Component {
 
                 <View style={styles.container}> 
                     <Text style={styles.header}> Nova Tarefa </Text>
-                    <TextInput style={styles.input} 
-                    placeholder='Informe a Descrição...'
-                    onChangeText={desc => this.setState( { desc: desc } )}
-                    value={this.state.desc}
+                    <TextInput style={[styles.input, { color: '#000' }]}
+                        placeholder='Informe a Descrição...'
+                        placeholderTextColor="#888888"
+                        onChangeText={desc => this.setState({ desc: desc })}
+                        value={this.state.desc}
                     />
-                    
+
                     <View style={styles.buttons}> 
 
-                    <TouchableOpacity onPress={this.props.onCancel}> 
+                        <TouchableOpacity onPress={this.props.onCancel}> 
                             <Text style={styles.button}> Cancelar </Text>
                         </TouchableOpacity>
 

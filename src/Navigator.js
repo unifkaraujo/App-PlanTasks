@@ -16,6 +16,7 @@ import TaskListPlan from './screens/TaskListPlan';
 import commonStyles from './commonStyles'
 import { Gravatar } from 'react-native-gravatar';
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import { Image } from 'react-native';
 
 // Banco de dados e AsyncStorage
 import AsyncStorage from '@react-native-async-storage/async-storage'
@@ -157,9 +158,14 @@ const CustomDrawerContent = (props) => {
   return (
     <DrawerContentScrollView {...props} style={{marginTop: -4}}>
       <View style={[styles.drawerHeader, {backgroundColor: retornaCorSel()}]}>
-        <Gravatar style={styles.avatar} options={{ parameters: { size: '100', d: 'mm' }, secure: true }} />
-        <Text style={styles.drawerHeaderText}> Anônimo </Text>
-        <TouchableOpacity onPress={logout}>
+        <Image
+          source={{ uri: 'https://www.w3schools.com/howto/img_avatar.png' }}
+          style={styles.avatar}
+        />
+        <View style={styles.nameContainer}>
+          <Text style={styles.drawerHeaderText}>Anônimo</Text>
+        </View>
+        <TouchableOpacity onPress={logout} style={styles.logout}>
           <Ionicons name='exit' size={30} color='white' style={{marginTop: 1}}/>
         </TouchableOpacity>
       </View>
@@ -266,7 +272,7 @@ export default App;
 
 const styles = StyleSheet.create({
   drawerHeader: {
-    height: 140,
+    height: 150,
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
@@ -278,9 +284,24 @@ const styles = StyleSheet.create({
     marginTop: 1
   },
   avatar: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+  },
+  nameContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 10,
+    marginTop: 5,
+  },
+  heartIcon: {
+    marginLeft: 5,
+  },
+  logout: {
+    position: 'absolute',
+    bottom: 10,
+    right: 10,
   },
 
 });

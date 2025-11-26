@@ -1,0 +1,232 @@
+[33mcommit ff20093afb86ffbd2d50a34e26dc8a4ce3b78f0c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Kaique Araujo <kaique.earaujo@outlook.com>
+Date:   Tue Aug 6 12:27:48 2024 -0300
+
+    versão inicial
+
+[1mdiff --git a/.bundle/config b/.bundle/config[m
+[1mnew file mode 100644[m
+[1mindex 0000000..848943b[m
+[1m--- /dev/null[m
+[1m+++ b/.bundle/config[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32mBUNDLE_PATH: "vendor/bundle"[m
+[32m+[m[32mBUNDLE_FORCE_RUBY_PLATFORM: 1[m
+[1mdiff --git a/.eslintrc.js b/.eslintrc.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..187894b[m
+[1m--- /dev/null[m
+[1m+++ b/.eslintrc.js[m
+[36m@@ -0,0 +1,4 @@[m
+[32m+[m[32mmodule.exports = {[m
+[32m+[m[32m  root: true,[m
+[32m+[m[32m  extends: '@react-native',[m
+[32m+[m[32m};[m
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0cab2ac[m
+[1m--- /dev/null[m
+[1m+++ b/.gitignore[m
+[36m@@ -0,0 +1,66 @@[m
+[32m+[m[32m# OSX[m
+[32m+[m[32m#[m
+[32m+[m[32m.DS_Store[m
+[32m+[m
+[32m+[m[32m# Xcode[m
+[32m+[m[32m#[m
+[32m+[m[32mbuild/[m
+[32m+[m[32m*.pbxuser[m
+[32m+[m[32m!default.pbxuser[m
+[32m+[m[32m*.mode1v3[m
+[32m+[m[32m!default.mode1v3[m
+[32m+[m[32m*.mode2v3[m
+[32m+[m[32m!default.mode2v3[m
+[32m+[m[32m*.perspectivev3[m
+[32m+[m[32m!default.perspectivev3[m
+[32m+[m[32mxcuserdata[m
+[32m+[m[32m*.xccheckout[m
+[32m+[m[32m*.moved-aside[m
+[32m+[m[32mDerivedData[m
+[32m+[m[32m*.hmap[m
+[32m+[m[32m*.ipa[m
+[32m+[m[32m*.xcuserstate[m
+[32m+[m[32mios/.xcode.env.local[m
+[32m+[m
+[32m+[m[32m# Android/IntelliJ[m
+[32m+[m[32m#[m
+[32m+[m[32mbuild/[m
+[32m+[m[32m.idea[m
+[32m+[m[32m.gradle[m
+[32m+[m[32mlocal.properties[m
+[32m+[m[32m*.iml[m
+[32m+[m[32m*.hprof[m
+[32m+[m[32m.cxx/[m
+[32m+[m[32m*.keystore[m
+[32m+[m[32m!debug.keystore[m
+[32m+[m
+[32m+[m[32m# node.js[m
+[32m+[m[32m#[m
+[32m+[m[32mnode_modules/[m
+[32m+[m[32mnpm-debug.log[m
+[32m+[m[32myarn-error.log[m
+[32m+[m
+[32m+[m[32m# fastlane[m
+[32m+[m[32m#[m
+[32m+[m[32m# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the[m
+[32m+[m[32m# screenshots whenever they are needed.[m
+[32m+[m[32m# For more information about the recommended setup visit:[m
+[32m+[m[32m# https://docs.fastlane.tools/best-practices/source-control/[m
+[32m+[m
+[32m+[m[32m**/fastlane/report.xml[m
+[32m+[m[32m**/fastlane/Preview.html[m
+[32m+[m[32m**/fastlane/screenshots[m
+[32m+[m[32m**/fastlane/test_output[m
+[32m+[m
+[32m+[m[32m# Bundle artifact[m
+[32m+[m[32m*.jsbundle[m
+[32m+[m
+[32m+[m[32m# Ruby / CocoaPods[m
+[32m+[m[32m/ios/Pods/[m
+[32m+[m[32m/vendor/bundle/[m
+[32m+[m
+[32m+[m[32m# Temporary files created by Metro to check the health of the file watcher[m
+[32m+[m[32m.metro-health-check*[m
+[32m+[m
+[32m+[m[32m# testing[m
+[32m+[m[32m/coverage[m
+[1mdiff --git a/.prettierrc.js b/.prettierrc.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2b54074[m
+[1m--- /dev/null[m
+[1m+++ b/.prettierrc.js[m
+[36m@@ -0,0 +1,7 @@[m
+[32m+[m[32mmodule.exports = {[m
+[32m+[m[32m  arrowParens: 'avoid',[m
+[32m+[m[32m  bracketSameLine: true,[m
+[32m+[m[32m  bracketSpacing: false,[m
+[32m+[m[32m  singleQuote: true,[m
+[32m+[m[32m  trailingComma: 'all',[m
+[32m+[m[32m};[m
+[1mdiff --git a/.watchmanconfig b/.watchmanconfig[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0967ef4[m
+[1m--- /dev/null[m
+[1m+++ b/.watchmanconfig[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32m{}[m
+[1mdiff --git a/App.tsx b/App.tsx[m
+[1mnew file mode 100644[m
+[1mindex 0000000..bc9910f[m
+[1m--- /dev/null[m
+[1m+++ b/App.tsx[m
+[36m@@ -0,0 +1,118 @@[m
+[32m+[m[32m/**[m
+[32m+[m[32m * Sample React Native App[m
+[32m+[m[32m * https://github.com/facebook/react-native[m
+[32m+[m[32m *[m
+[32m+[m[32m * @format[m
+[32m+[m[32m */[m
+[32m+[m
+[32m+[m[32mimport React from 'react';[m
+[32m+[m[32mimport type {PropsWithChildren} from 'react';[m
+[32m+[m[32mimport {[m
+[32m+[m[32m  SafeAreaView,[m
+[32m+[m[32m  ScrollView,[m
+[32m+[m[32m  StatusBar,[m
+[32m+[m[32m  StyleSheet,[m
+[32m+[m[32m  Text,[m
+[32m+[m[32m  useColorScheme,[m
+[32m+[m[32m  View,[m
+[32m+[m[32m} from 'react-native';[m
+[32m+[m
+[32m+[m[32mimport {[m
+[32m+[m[32m  Colors,[m
+[32m+[m[32m  DebugInstructions,[m
+[32m+[m[32m  Header,[m
+[32m+[m[32m  LearnMoreLinks,[m
+[32m+[m[32m  ReloadInstructions,[m
+[32m+[m[32m} from 'react-native/Libraries/NewAppScreen';[m
+[32m+[m
+[32m+[m[32mtype SectionProps = PropsWithChildren<{[m
+[32m+[m[32m  title: string;[m
+[32m+[m[32m}>;[m
+[32m+[m
+[32m+[m[32mfunction Section({children, title}: SectionProps): React.JSX.Element {[m
+[32m+[m[32m  const isDarkMode = useColorScheme() === 'dark';[m
+[32m+[m[32m  return ([m
+[32m+[m[32m    <View style={styles.sectionContainer}>[m
+[32m+[m[32m      <Text[m
+[32m+[m[32m        style={[[m
+[32m+[m[32m          styles.sectionTitle,[m
+[32m+[m[32m          {[m
+[32m+[m[32m            color: isDarkMode ? Colors.white : Colors.black,[m
+[32m+[m[32m          },[m
+[32m+[m[32m        ]}>[m
+[32m+[m[32m        {title}[m
+[32m+[m[32m      </Text>[m
+[32m+[m[32m      <Text[m
+[32m+[m[32m        style={[[m
+[32m+[m[32m          styles.sectionDescription,[m
+[32m+[m[32m          {[m
+[32m+[m[32m            color: isDarkMode ? Colors.light : Colors.dark,[m
+[32m+[m[32m          },[m
+[32m+[m[32m        ]}>[m
+[32m+[m[32m        {children}[m
+[32m+[m[32m      </Text>[m
+[32m+[m[32m    </View>[m
+[32m+[m[32m  );[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction App(): React.JSX.Element {[m
+[32m+[m[32m  const isDarkMode = useColorScheme() === 'dark';[m
+[32m+[m
+[32m+[m[32m  const backgroundStyle = {[m
+[32m+[m[32m    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,[m
+[32m+[m[32m  };[m
+[32m+[m
+[32m+[m[32m  return ([m
+[32m+[m[32m    <SafeAreaView style={backgroundStyle}>[m
+[32m+[m[32m      <StatusBar[m
+[32m+[m[32m        barStyle={isDarkMode ? 'light-content' : 'dark-content'}[m
+[32m+[m[32m        backgroundColor={backgroundStyle.backgroundColor}[m
+[32m+[m[32m      />[m
+[32m+[m[32m      <ScrollView[m
+[32m+[m[32m        contentInsetAdjustmentBehavior="automatic"[m
+[32m+[m[32m        style={backgroundStyle}>[m
+[32m+[m[32m        <Header />[m
+[32m+[m[32m        <View[m
+[32m+[m[32m          style={{[m
+[32m+[m[32m            backgroundColor: isDarkMode ? Colors.black : Colors.white,[m
+[32m+[m[32m          }}>[m
+[32m+[m[32m          <Section title="Step One 1">[m
+[32m+[m[32m            Edit <Text style={styles.highlight}>App.tsx</Text> to change this[m
+[32m+[m[32m            screen and then come back to see your edits.[m
+[32m+[m[32m          </Section>[m
+[32m+[m[32m          <Section title="See Your Changes">[m
+[32m+[m[32m            <ReloadInstructions />[m
+[32m+[m[32m          </Section>[m
+[32m+[m[32m          <Section title="Debug">[m
+[32m+[m[32m            <DebugInstructions />[m
+[32m+[m[32m          </Section>[m
+[32m+[m[32m          <Section title="Learn More">[m
+[32m+[m[32m            Read the docs to discover what to do next:[m
+[32m+[m[32m          </Section>[m
+[32m+[m[32m          <LearnMoreLinks />[m
+[32m+[m[32m        </View>[m
+[32m+[m[32m      </ScrollView>[m
+[32m+[m[32m    </SafeAreaView>[m
+[32m+[m[32m  );[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mconst styles = StyleSheet.create({[m
+[32m+[m[32m  sectionContainer: {[m
+[32m+[m[32m    marginTop: 32,[m
+[32m+[m[32m    paddingHorizontal: 24,[m
+[32m+[m[32m  },[m
+[32m+[m[32m  sectionTitle: {[m
+[32m+[m[32m    fontSize: 24,[m
+[32m+[m[32m    fontWeight: '600',[m
+[32m+[m[32m  },[m
+[32m+[m[32m  sectionDescription: {[m
+[32m+[m[32m    marginTop: 8,[m
+[32m+[m[32m    fontSize: 18,[m

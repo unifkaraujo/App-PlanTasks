@@ -69,11 +69,11 @@ export default props => {
                     </View>
 
                     <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
-                        <TextInput 
-                        placeholder='Observação'
-                        placeholderTextColor={'#B5B5B5'}
-                        onChangeText={desc => changeObs(desc) }
-                        value={selectedItem}
+                        <TextInput style={{color: '#FF0000'}}
+                            placeholder='Observação'
+                            placeholderTextColor={'#B5B5B5'}
+                            onChangeText={desc => changeObs(desc) }
+                            value={selectedItem}
                         />
                     </View>
 
